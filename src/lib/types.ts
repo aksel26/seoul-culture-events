@@ -1,7 +1,7 @@
 export interface TCulturalEventInfo {
   list_total_count: number;
   RESULT: TResultCode;
-  TList: TList[];
+  row: TList[];
 }
 
 export interface TResultCode {
