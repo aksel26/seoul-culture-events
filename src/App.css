@@ -5,4 +5,58 @@
   /* 기본 검정색 재정의 - 원하는 색상으로 변경 */
   --color-black: #333333; /* 예시: 순수 검정색(#000000) 대신 좀 더 부드러운 검정색 사용 */
   --font-sans: "Sunflower", ui-sans-serif, system-ui, sans-serif;
+
+  /* 사용자 정의 색상 */
+
+  /* 여러 색조를 가진 색상 추가 */
+  --color-mint-50: #e7fef9;
+  --color-mint-100: #d5faf1;
+  --color-mint-200: #abf3e1;
+  --color-mint-300: #7dedd1;
+  --color-mint-400: #5ae7c4;
+  --color-mint-500: #44e4bb;
+  --color-mint-600: #36e2b6;
+  --color-mint-700: #27c9a0;
+  --color-mint-800: #17b38d;
+  --color-mint-900: #009b79;
+
+  --color-pink-50: #ffeaf0;
+  --color-pink-100: #fdd5dd;
+  --color-pink-200: #f1abb9;
+  --color-pink-300: #e77d92;
+  --color-pink-400: #de5671;
+  --color-pink-500: #d93e5d;
+  --color-pink-600: #d83052;
+  --color-pink-700: #c02143;
+  --color-pink-800: #ac1a3a;
+  --color-pink-900: #980c31;
 }
+
+/* 서울시 시그니쳐 색상 민트색상  */
+/* #17b58f  */
+/* [
+  "#e7fef9",
+  "#d5faf1",
+  "#abf3e1",
+  "#7dedd1",
+  "#5ae7c4",
+  "#44e4bb",
+  "#36e2b6",
+  "#27c9a0",
+  "#17b38d",
+  "#009b79"
+] */
+/*  서울시 시그니쳐 색상 붉은색 */
+/* #dd506c  */
+/* [
+  "#ffeaf0",
+  "#fdd5dd",
+  "#f1abb9",
+  "#e77d92",
+  "#de5671",
+  "#d93e5d",
+  "#d83052",
+  "#c02143",
+  "#ac1a3a",
+  "#980c31"
+] */
