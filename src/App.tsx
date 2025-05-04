@@ -1,26 +1,20 @@
-import { useEffect } from "react";
+import Header from "./component/header";
+import Content from "./component/content";
 import "./App.css";
-import apiClient from "./services/api";
-
+import Footer from "./component/footer";
 function App() {
-  const KEY = import.meta.env.VITE_OPEN_API_KEY;
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const result = await apiClient.get(
-        `http://openapi.seoul.go.kr:8088/${KEY}/json/culturalEventInfo/1/5`
-      );
-
-      console.log("result: ", result);
-    };
-
-    fetchUsers();
-  }, []);
-
   return (
-    <>
-      <div className="font-bold bg-red-300">list</div>
-    </>
+    <div className="w-screen bg-slate-200 break-keep">
+      <div className="max-w-2xl mx-auto">
+        <header>
+          <Header />
+        </header>
+        <section>
+          <Content />
+        </section>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
