@@ -1,1 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?&family=Sunflower:wght@300&display=swap");
 @import "tailwindcss";
+
+@theme inline {
+  /* 기본 검정색 재정의 - 원하는 색상으로 변경 */
+  --color-black: #333333; /* 예시: 순수 검정색(#000000) 대신 좀 더 부드러운 검정색 사용 */
+  --font-sans: "Sunflower", ui-sans-serif, system-ui, sans-serif;
+}
