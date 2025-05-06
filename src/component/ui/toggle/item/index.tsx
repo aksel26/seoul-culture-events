@@ -12,8 +12,8 @@ const ToggleItem = ({ value, label, isSelected, onClick }: TToggleItem) => {
     <button
       className={`p-1 px-6 rounded-xl text-xs font-medium transition-colors  ${
         isSelected
-          ? "bg-mint-800 text-mint-200"
-          : "bg-mint-200 text-mint-800 hover:bg-mint-400"
+          ? "bg-primary-800 text-primary-200"
+          : "bg-primary-200 text-primary-800 hover:bg-primary-400"
       }`}
       onClick={() => onClick(value)}
     >
