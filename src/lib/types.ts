@@ -33,3 +33,8 @@ export interface TList {
   IS_FREE: string;
   HMPG_ADDR: string;
 }
+
+export interface MonthOption {
+  label: string;
+  value: string;
+}
