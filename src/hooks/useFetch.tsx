@@ -2,22 +2,21 @@ import { useEffect, useState } from "react";
 import { TCulturalEventInfo } from "../lib/types";
 import apiClient from "../services/api";
 import useCategoryStore from "../store/useStore";
+import { extractAndJoinValues } from "@/utils/fetchForm";
 
 const useFetch = () => {
   const KEY = import.meta.env.VITE_OPEN_API_KEY;
 
   const { params } = useCategoryStore();
-  console.log("params: ", params);
 
   const [result, setResult] = useState<TCulturalEventInfo>();
 
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchUsers = async () => {
+      const paramsResult = extractAndJoinValues(params);
       setIsLoading(true);
-      const fetchResult = await apiClient.get(
-        `http://openapi.seoul.go.kr:8088/${KEY}/json/culturalEventInfo/1/10/축제-시민화합`
-      );
+      const fetchResult = await apiClient.get(`http://openapi.seoul.go.kr:8088/${KEY}/json/culturalEventInfo/1/10/${paramsResult}`);
 
       setIsLoading(false);
 
@@ -25,7 +24,7 @@ const useFetch = () => {
     };
 
     fetchUsers();
-  }, []);
+  }, [params]);
 
   return { isLoading, result };
 };

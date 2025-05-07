@@ -38,3 +38,9 @@ export interface MonthOption {
   label: string;
   value: string;
 }
+
+export interface FetchForm {
+  codeName: string;
+  title: string;
+  date: string;
+}

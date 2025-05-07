@@ -1,7 +1,7 @@
 // src/store/useStore.ts
 import { create } from "zustand";
 
-interface Params {
+export interface Params {
   title?: string;
   codeName?: string;
   date?: string;
@@ -17,13 +17,19 @@ interface CategoryState {
 const useCategoryStore = create<CategoryState>((set) => ({
   // 상태(State)
   params: {
-    title: "",
     codeName: "",
+    title: "",
     date: "",
   },
 
   // 액션(Actions)
-  setParams: (params: Params) => set({ params: params }),
+  setParams: (newParams: Partial<Params>) =>
+    set((state) => ({
+      params: {
+        ...state.params, // 기존 상태 유지
+        ...newParams, // 변경된 필드만 업데이트
+      },
+    })),
   reset: () =>
     set({
       params: {

@@ -1,23 +1,24 @@
+import { X } from "lucide-react";
 import React from "react";
 
 type TToggleItem = {
   value: string;
+  key: string;
+  keyValue: string;
   label: string;
-  isSelected: boolean;
   onClick: (value: string) => void;
 };
 
-const ToggleItem = ({ value, label, isSelected, onClick }: TToggleItem) => {
+const ToggleItem = ({ value, keyValue, label, onClick }: TToggleItem) => {
   return (
     <button
-      className={`p-1 px-6 rounded-xl text-xs font-medium transition-colors  ${
-        isSelected
-          ? "bg-primary-800 text-primary-200"
-          : "bg-primary-200 text-primary-800 hover:bg-primary-400"
-      }`}
-      onClick={() => onClick(value)}
+      className={`p-1 px-3 rounded-xl text-xs font-medium transition-colors bg-primary-200 text-primary-800 hover:bg-primary-400`}
+      onClick={() => onClick(keyValue)}
     >
-      {label || value}
+      <div className="flex gap-x-1 justify-between items-center">
+        {label || value}
+        <X size={15} strokeWidth={1.5} />
+      </div>
     </button>
   );
 };

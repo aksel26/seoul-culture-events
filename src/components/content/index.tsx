@@ -4,6 +4,7 @@ import { TList } from "../../lib/types";
 import ContentCard from "../mainCard";
 import SearchModal from "../search";
 import useCategoryStore from "@/store/useStore";
+import ParamsList from "../category/inde";
 
 const Content = () => {
   const { result, isLoading } = useFetch();
@@ -17,15 +18,12 @@ const Content = () => {
       <div className="flex items-center justify-between mb-5">
         <div className="flex justify-between items-center ">
           <p className="text-sm text-slate-400">
-            총
-            <span className="ml-1 font-extrabold text-primary-900">
-              {result?.list_total_count}개
-            </span>
-            의 행사가 있어요.
+            총<span className="ml-1 font-extrabold text-primary-900">{result?.list_total_count}개</span>의 행사가 있어요.
           </p>
         </div>
         <SearchModal />
       </div>
+      <ParamsList />
 
       {/* <Category /> */}
       <div className="flex flex-wrap gap-12 mt-6">
