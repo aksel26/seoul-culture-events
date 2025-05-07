@@ -1,6 +1,6 @@
 import React from "react";
 import { TList } from "../../lib/types";
-import { IconMapPin } from "@tabler/icons-react";
+import { MapPin } from "lucide-react";
 // import PlaceTag from "../tag";
 
 const ContentCard = ({ item }: { item: TList }) => {
@@ -8,10 +8,7 @@ const ContentCard = ({ item }: { item: TList }) => {
     window.open(url, "_blank");
   };
   return (
-    <div
-      className="flex flex-col w-full relative overflow-hidden"
-      onClick={() => redirectPage(item.HMPG_ADDR)}
-    >
+    <div className="flex flex-col w-full relative overflow-hidden" onClick={() => redirectPage(item.HMPG_ADDR)}>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-md"></div>
 
       <img src={item.MAIN_IMG} className="w-full md:max-w-50 rounded-md" />
@@ -22,7 +19,7 @@ const ContentCard = ({ item }: { item: TList }) => {
         <div className="flex justify-between items-center">
           <p className="text-xs">{item.CODENAME}</p>
           <div className="flex gap-x-1 items-center">
-            <IconMapPin size={20} strokeWidth={1.2} />
+            <MapPin size={20} strokeWidth={1.2} />
             <p className="text-xs">{item.GUNAME}</p>
           </div>
           {/* <PlaceTag>{item.GUNAME}</PlaceTag> */}

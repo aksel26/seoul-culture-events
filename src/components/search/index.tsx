@@ -1,24 +1,11 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CATEGORY, MONTH } from "@/lib/const";
 import useCategoryStore from "@/store/useStore";
-import { IconSearch } from "@tabler/icons-react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { Search } from "lucide-react";
 
 const SearchModal = () => {
   const { setParams } = useCategoryStore();
@@ -32,16 +19,14 @@ const SearchModal = () => {
       <DialogTrigger>
         {/* <Button size={"sm"} className="text-xs bg-primary800"> */}
         <div className="flex gap-x-1 text-xs bg-primary-700 px-4 py-2 rounded-sm text-primary-50 items-center">
-          <IconSearch size={16} strokeWidth={1.5} />
+          <Search size={16} strokeWidth={1.5} />
           <p>행사 찾기</p>
         </div>
         {/* </Button> */}
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-left text-sm">
-            원하는 문화행사를 검색하세요.
-          </DialogTitle>
+          <DialogTitle className="text-left text-sm">원하는 문화행사를 검색하세요.</DialogTitle>
           <DialogDescription className="flex flex-col gap-y-5 mt-3">
             <Input placeholder="행사명을 입력하세요." />
             <Select>

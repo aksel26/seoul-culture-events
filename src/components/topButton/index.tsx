@@ -1,4 +1,4 @@
-import { IconArrowUp } from "@tabler/icons-react";
+import { ChevronUp } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const ToTopButton = () => {
@@ -34,7 +34,7 @@ const ToTopButton = () => {
       type="button"
       onClick={scrollToTop}
     >
-      <IconArrowUp strokeWidth={1.8} size={20} />
+      <ChevronUp strokeWidth={1.8} size={20} />
     </button>
   );
 };

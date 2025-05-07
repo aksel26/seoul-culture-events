@@ -1,4 +1,4 @@
-import { IconBrandGithub } from "@tabler/icons-react";
+// import { Github } from "lucide-react";
 import hatchImg from "../../assets/footer.png";
 const Footer = () => {
   return (
@@ -11,9 +11,7 @@ const Footer = () => {
             <p>이 서비스는 공공데이터를 활용하여 제공됩니다.</p>
             <p>함께 발전시켜 나가는 오픈소스 프로젝트입니다</p>
             <div className="flex gap-x-1 items-center">
-              <span>
-                <IconBrandGithub size={18} />
-              </span>
+              <span>{/* <Github size={18} /> */}</span>
               @aksel26{" "}
             </div>
           </div>
