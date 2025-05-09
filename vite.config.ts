@@ -12,11 +12,12 @@ export default defineConfig({
     },
   },
   server: {
-    allowedHosts: [
-      // 'localhost',
-      // 'my-website.com',
-      // '*.my-domain.com'    // allows all subdomains
-      // "all",
-    ],
+    proxy: {
+      "/api": {
+        target: "http://openapi.seoul.go.kr:8088",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
 });
