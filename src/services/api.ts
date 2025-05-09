@@ -4,7 +4,7 @@ import axios from "axios";
 // .env 파일에서 설정한 기본 URL 사용
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "http://openapi.seoul.go.kr:8088",
   headers: {
     "Content-Type": "application/json",
   },
