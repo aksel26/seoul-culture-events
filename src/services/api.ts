@@ -3,8 +3,12 @@ import axios from "axios";
 
 // .env 파일에서 설정한 기본 URL 사용
 
+const BASE_URL = import.meta.env.PROD
+  ? "/api" // 프로덕션 환경
+  : "http://openapi.seoul.go.kr:8088/"; // 개발 환경
+
 const apiClient = axios.create({
-  baseURL: "/api",
+  baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
