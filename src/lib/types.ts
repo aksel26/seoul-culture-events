@@ -40,7 +40,7 @@ export interface MonthOption {
 }
 
 export interface FetchForm {
-  codeName: string;
-  title: string;
-  date: string;
+  codeName?: string;
+  title?: string;
+  date?: string;
 }

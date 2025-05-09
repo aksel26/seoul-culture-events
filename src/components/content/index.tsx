@@ -1,18 +1,17 @@
 import React from "react";
 import useFetch from "../../hooks/useFetch";
 import { TList } from "../../lib/types";
+import ParamsList from "../category";
+import Loader from "../loader";
 import ContentCard from "../mainCard";
 import SearchModal from "../search";
-import useCategoryStore from "@/store/useStore";
-import ParamsList from "../category/inde";
 
 const Content = () => {
   const { result, isLoading } = useFetch();
 
-  const { params } = useCategoryStore();
-  console.log("params: ", params);
+  // console.log("params: ", params);
 
-  if (isLoading) return <div>로딩중</div>;
+  if (isLoading) return <Loader />;
   return (
     <div className="p-8">
       <div className="flex items-center justify-between mb-5">

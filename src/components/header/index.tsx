@@ -1,4 +1,3 @@
-import React from "react";
 import hatchImg from "../../assets/hatch.png";
 
 const Header = () => {

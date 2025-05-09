@@ -1,6 +1,5 @@
-import React from "react";
-import { TList } from "../../lib/types";
 import { MapPin } from "lucide-react";
+import { TList } from "../../lib/types";
 // import PlaceTag from "../tag";
 
 const ContentCard = ({ item }: { item: TList }) => {
