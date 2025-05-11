@@ -6,7 +6,7 @@ import ToTopButton from "./components/topButton";
 import Events from "./components/events";
 function App() {
   return (
-    <div className="w-screen bg-gradient-to-b from-primary-50 to-pink-100 break-keep">
+    <div className="w-screen h-screen bg-gradient-to-b from-primary-50 to-pink-100 break-keep">
       <div className="max-w-2xl mx-auto">
         <header>
           <Header />
@@ -15,7 +15,7 @@ function App() {
           <Content />
           <Events />
         </section>
-        <Footer />
+        {/* <Footer /> */}
 
         <ToTopButton />
       </div>

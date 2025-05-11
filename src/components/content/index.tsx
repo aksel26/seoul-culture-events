@@ -15,7 +15,7 @@ const Content = () => {
 
   // if (isLoading) return <Loader />;
   return (
-    <div className="px-8 flex gap-x-2 overflow-scroll">
+    <div className="px-6 flex gap-x-2 overflow-scroll">
       {CATEGORY.map((item) => (
         <CategoryCard label={item.label} />
       ))}

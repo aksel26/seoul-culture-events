@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <header className="text-white py-8 md:py-20">
       {/* <img src={hatchImg} alt="hatch" /> */}
-      <div className="container mx-auto px-8 ">
-        <h1 className="text-3xl md:text-5xl text-primary-900 mt-8 mb-4">
+      <div className="container mx-auto px-6 ">
+        <h1 className="text-3xl md:text-5xl text-primary-900 mb-4">
           서울시 문화행사
         </h1>
 
