@@ -3,6 +3,7 @@ import Content from "./components/content";
 import Footer from "./components/footer";
 import "./App.css";
 import ToTopButton from "./components/topButton";
+import Events from "./components/events";
 function App() {
   return (
     <div className="w-screen bg-gradient-to-b from-primary-50 to-pink-100 break-keep">
@@ -12,6 +13,7 @@ function App() {
         </header>
         <section>
           <Content />
+          <Events />
         </section>
         <Footer />
 
