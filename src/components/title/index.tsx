@@ -26,8 +26,14 @@ const Title = () => {
     };
   }, []);
   return (
-    <div className="sticky top-0 py-24">
-      <img src={hatchImg} alt="hatch" className="transition-opacity duration-200" style={{ opacity }} />
+    <div className="sticky top-0 py-20">
+      <img src={hatchImg} alt="hatch" className="transition-opacity duration-200 mb-10" style={{ opacity }} />
+
+      <p style={{ opacity }} className="text-primary-700 text-xl px-6 leading-9">
+        서울시에서 준비한
+        <br />
+        <span className="font-bold text-2xl text-pink-200">3,000개</span>의 문화공연을 확인해 보세요!
+      </p>
     </div>
   );
 };
