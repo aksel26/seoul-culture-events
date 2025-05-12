@@ -6,12 +6,14 @@ import Events from "./components/events";
 import PlaceTag from "./component/ui/tag";
 import { CATEGORY } from "./lib/const";
 import Title from "./components/title";
+import hatchImg from "../src/assets/header.png";
 function App() {
   return (
     <div className="w-screen h-screen break-keep ">
-      <header className="sticky top-0  bg-white shadow-xs transition-opacity duration-300 z-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center text-base font-bold py-2 text-primary">서울시 문화공연</div>
+      <header className="sticky top-0  bg-white shadow-xs transition-opacity duration-300 z-50 ">
+        <div className="container mx-auto px-4 relative py-3">
+          <div className="text-center text-base font-bold text-primary">서울시 문화공연</div>
+          <img src={hatchImg} alt="header" className="h-10 absolute bottom-0 left-5" />
         </div>
       </header>
       <main className="max-w-2xl mx-auto">
