@@ -12,6 +12,7 @@ export default defineConfig({
     },
   },
   server: {
+    allowedHosts: true,
     proxy: {
       "/api": {
         target: "http://openapi.seoul.go.kr:8088",
