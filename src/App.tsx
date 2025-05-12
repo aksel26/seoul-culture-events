@@ -9,9 +9,9 @@ import Title from "./components/title";
 function App() {
   return (
     <div className="w-screen h-screen break-keep ">
-      <header className="sticky top-0 pㅛ-1 bg-white shadow-md transition-opacity duration-300 z-50">
+      <header className="sticky top-0  bg-white shadow-xs transition-opacity duration-300 z-50">
         <div className="container mx-auto px-4">
-          <div className="text-center text-base font-bold py-2">서울시 문화공연</div>
+          <div className="text-center text-base font-bold py-2 text-primary">서울시 문화공연</div>
         </div>
       </header>
       <main className="max-w-2xl mx-auto">

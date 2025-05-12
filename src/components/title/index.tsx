@@ -26,7 +26,7 @@ const Title = () => {
     };
   }, []);
   return (
-    <div className="sticky top-0 py-24  z-50">
+    <div className="sticky top-0 py-24">
       <img src={hatchImg} alt="hatch" className="transition-opacity duration-200" style={{ opacity }} />
     </div>
   );
