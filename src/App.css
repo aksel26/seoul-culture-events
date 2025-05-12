@@ -1,11 +1,22 @@
 /* @import url("https://fonts.googleapis.com/css2?&family=Sunflower:wght@300&display=swap"); */
 
-@font-face {
+/* @font-face {
   font-family: "omyu_pretty";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2") format("woff2");
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.ttf") format("woff2");
   font-weight: normal;
   font-style: normal;
+} */
+
+@font-face {
+  font-family: "SeoulNamsan";
+  src: url("./assets/fonts/SeoulNamsanB.ttf") format("truetype"), url("./assets/fonts/SeoulNamsanEB.woff2") format("truetype"),
+    url("./assets/fonts/SeoulNamsanL.woff") format("truetype"), url("./assets/fonts/SeoulNamsanM.woff") format("truetype"),
+    url("./assets/fonts/SeoulNamsanvert.woff") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -14,7 +25,7 @@
 @theme inline {
   /* 기본 검정색 재정의 - 원하는 색상으로 변경 */
   --color-black: #333333; /* 예시: 순수 검정색(#000000) 대신 좀 더 부드러운 검정색 사용 */
-  --font-sans: "omyu_pretty", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "SeoulNamsan", ui-sans-serif, system-ui, sans-serif;
 
   /* 사용자 정의 색상 */
 
