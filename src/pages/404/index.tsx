@@ -6,7 +6,7 @@ const NotFound = () => {
   const router = useNavigate();
   const goHome = () => router("/");
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-svh flex items-center justify-center">
       <div className="relative">
         <img src={hatchImg} alt="mobile" className="w-68 md:w-78 mx-auto" />
         <div className="absolute top-68 md:top-78 px-4 flex flex-col gap-y-3 text-pink-300 text-sm md:text-base">
