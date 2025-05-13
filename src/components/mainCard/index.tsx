@@ -7,7 +7,7 @@ const ContentCard = ({ item }: { item: TList }) => {
     window.open(url, "_blank");
   };
   return (
-    <div className="flex flex-col w-full mx-auto relative overflow-hidden" onClick={() => redirectPage(item.HMPG_ADDR)}>
+    <div className="flex flex-col w-[90%] mx-auto relative overflow-hidden snap-center" onClick={() => redirectPage(item.HMPG_ADDR)}>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-md"></div>
 
       <img src={item.MAIN_IMG} className="w-full md:max-w-50 rounded-md" />

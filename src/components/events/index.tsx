@@ -8,12 +8,12 @@ const Events = ({ result, isLoading }: { result: TCulturalEventInfo | undefined;
 
   if (isLoading) return <Loader />;
   return (
-    <div className="p-6 z-20 h-full">
+    <div className="px-6 z-20 flex flex-col gap-y-3 pb-4">
       {result?.row.map((item: TList, index: number) => (
         <React.Fragment key={index}>
-          <div className="p-1 snap-center">
-            <ContentCard item={item} />
-          </div>
+          {/* <div className="p-1"> */}
+          <ContentCard item={item} />
+          {/* </div> */}
         </React.Fragment>
       ))}
     </div>
