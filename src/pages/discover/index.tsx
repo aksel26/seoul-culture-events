@@ -1,7 +1,6 @@
 import PlaceTag from "@/component/ui/tag";
 import { Input } from "@/components/ui/input";
 import { CATEGORY, CITY } from "@/lib/const";
-import React from "react";
 
 const Discover = () => {
   return (
