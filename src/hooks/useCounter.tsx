@@ -12,7 +12,7 @@ const useCounter = ({ target = 0, speed = 3000 }: { target: number | undefined; 
         const newCount = prevCount + increment;
 
         if (newCount < target) {
-          setTimeout(updateCount, 25);
+          setTimeout(updateCount, 1);
           return newCount;
         } else {
           return target;
