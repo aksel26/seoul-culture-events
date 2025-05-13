@@ -1,12 +1,10 @@
-import useFetch from "@/hooks/useFetch";
-import { TList } from "@/lib/types";
+import { TCulturalEventInfo, TList } from "@/lib/types";
 import React from "react";
 import Loader from "../loader";
 import ContentCard from "../mainCard";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
-const Events = () => {
-  const { result, isLoading } = useFetch();
+const Events = ({ result, isLoading }: { result: TCulturalEventInfo | undefined; isLoading: boolean }) => {
+  // const { result, isLoading } = useFetch();
 
   if (isLoading) return <Loader />;
   return (
@@ -16,24 +14,15 @@ const Events = () => {
         <button className="text-base text-slate-400">더보기 </button>
       </div>
 
-      <Carousel
-        orientation="vertical"
-        opts={{
-          align: "center",
-        }}
-      >
-        <CarouselContent className="h-[600px]">
-          {result?.row.map((item: TList, index: number) => (
-            <React.Fragment key={index}>
-              <CarouselItem className="pt-1 basis-1/3">
-                <div className="p-1">
-                  <ContentCard item={item} />
-                </div>
-              </CarouselItem>
-            </React.Fragment>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      <div className="h-[600px] overflow-y-auto snap-y snap-mandatory scroll-p-4">
+        {result?.row.map((item: TList, index: number) => (
+          <React.Fragment key={index}>
+            <div className="p-1 snap-center">
+              <ContentCard item={item} />
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
