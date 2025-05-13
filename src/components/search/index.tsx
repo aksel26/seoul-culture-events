@@ -75,13 +75,10 @@ const SearchModal = () => {
 
           <Popover>
             <PopoverTrigger asChild>
-              <div>
-                <Button variant={"outline"} className={cn("w-full justify-start text-left text-xs font-normal", !date && "text-muted-foreground")}>
-                  <CalendarIcon />
-                  {date ? format(date, "yyyy-MM-dd", { locale: ko }) : <span>날짜를 선택해 주세요.</span>}
-                </Button>
-                <p className="text-xs mt-1 text-gray-400">선택한 날짜 이후의 모든 데이터가 조회됩니다.</p>
-              </div>
+              <Button variant={"outline"} className={cn("w-full justify-start text-left text-xs font-normal", !date && "text-muted-foreground")}>
+                <CalendarIcon />
+                {date ? format(date, "yyyy-MM-dd", { locale: ko }) : <span>날짜를 선택해 주세요.</span>}
+              </Button>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
               <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
