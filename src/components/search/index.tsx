@@ -1,12 +1,17 @@
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CATEGORY, MONTH } from "@/lib/const";
+import { CATEGORY } from "@/lib/const";
 import useCategoryStore from "@/store/useStore";
+import { CalendarIcon, Search } from "lucide-react";
+import { useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { Search } from "lucide-react";
-import { useState } from "react";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { format } from "date-fns";
+import { Calendar } from "../ui/calendar";
+import { cn } from "@/lib/utils";
+import { ko } from "date-fns/locale";
 
 const SearchModal = () => {
   const { setParams } = useCategoryStore();
@@ -35,6 +40,7 @@ const SearchModal = () => {
   const submit = () => {
     setParams(values);
   };
+  const [date, setDate] = useState<Date>();
 
   return (
     <Dialog>
@@ -46,39 +52,47 @@ const SearchModal = () => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="text-left text-sm">다양한 문화행사를 찾아보세요.</DialogTitle>
-          <DialogDescription className="flex flex-col gap-y-5 mt-3">
-            <Input name="title" onChange={handleChange} value={values.title} placeholder="행사명을 입력하세요." />
-            <Select onValueChange={handleSelectChange("codeName")} value={values.codeName}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="카테고리를 선택하세요." />
-              </SelectTrigger>
-              <SelectContent>
-                {CATEGORY.map((item: { label: string; value: string }) => (
-                  <SelectItem key={item.value} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Select onValueChange={handleSelectChange("date")} value={values.date}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="월을 선택하세요." />
-              </SelectTrigger>
-              <SelectContent>
-                {MONTH.map((item: { label: string; value: string }) => (
-                  <SelectItem key={item.value} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Button size={"xs"} onClick={submit}>
-              검색하기
-            </Button>
+          <DialogTitle className="text-left text-2xl">Discover</DialogTitle>
+          <DialogDescription className="text-xs leading-5">
+            원하시는 컨텐츠를 찾아보세요. <br />
+            제목, 카테고리, 날짜로 검색이 가능합니다.
           </DialogDescription>
         </DialogHeader>
+        <div className="flex flex-col gap-y-6 my-3">
+          <Input name="title" onChange={handleChange} value={values.title} placeholder="찾고싶은 문화공연명을 입력해 주세요." />
+          <Select onValueChange={handleSelectChange("codeName")} value={values.codeName}>
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="카테고리를 선택하세요." />
+            </SelectTrigger>
+            <SelectContent>
+              {CATEGORY.map((item: { label: string; value: string }) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+
+          <Popover>
+            <PopoverTrigger asChild>
+              <div>
+                <Button variant={"outline"} className={cn("w-full justify-start text-left text-xs font-normal", !date && "text-muted-foreground")}>
+                  <CalendarIcon />
+                  {date ? format(date, "yyyy-MM-dd", { locale: ko }) : <span>날짜를 선택해 주세요.</span>}
+                </Button>
+                <p className="text-xs mt-1 text-gray-400">선택한 날짜 이후의 모든 데이터가 조회됩니다.</p>
+              </div>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0" align="start">
+              <Calendar mode="single" selected={date} onSelect={setDate} initialFocus />
+            </PopoverContent>
+          </Popover>
+        </div>
+        <DialogFooter>
+          <Button size={"xs"} onClick={submit}>
+            검색하기
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
