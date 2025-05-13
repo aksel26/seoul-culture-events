@@ -9,7 +9,7 @@ const Title = ({ result }: { result: TCulturalEventInfo | undefined }) => {
   const { count } = useCounter({ target: result?.list_total_count, speed: 3000 });
 
   return (
-    <div className="sticky top-0 py-20">
+    <div className="py-20 snap-center">
       <img src={hatchImg} alt="hatch" className="transition-opacity duration-200 mb-10" style={{ opacity }} />
 
       <p style={{ opacity }} className="text-primary-700 text-xl px-6 leading-9">
