@@ -16,7 +16,7 @@ const Home = () => {
 
   if (isLoading) return <Loader />;
   return (
-    <div className="w-screen h-screen break-keep overflow-y-auto snap-y snap-mandatory scroll-p-4 ">
+    <div className="w-screen h-svh break-keep overflow-y-auto snap-y snap-mandatory scroll-p-4 ">
       <main className="max-w-2xl mx-auto pb-[120px] snap-center">
         <Title result={result} />
 
