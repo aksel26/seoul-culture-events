@@ -194,4 +194,7 @@
     @apply bg-background text-foreground;
     word-break: keep-all;
   }
+  #root {
+    height: 100svh;
+  }
 }

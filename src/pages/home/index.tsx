@@ -16,8 +16,8 @@ const Home = () => {
 
   if (isLoading) return <Loader />;
   return (
-    <main className="w-screen h-svh break-keep overflow-y-auto snap-y  ">
-      <div className="max-w-2xl mx-auto pb-[111.77px]">
+    <main className="w-screen break-keep overflow-y-auto snap-y  ">
+      <div className="max-w-2xl mx-auto ">
         <section>
           <Title result={result} />
           <div className="z-10 relative bg-gradient-to-b from-primary-50 to-pink-100 pt-10">

@@ -2,7 +2,7 @@
 import hatchImg from "../../assets/footer.png";
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white  fixed bottom-0 z-1 py-2 w-full ">
+    <footer className="max-w-2xl mx-auto bg-gray-800 text-white z-1 py-2 w-full ">
       <div className="mx-auto flex justify-center items-center container gap-x-3">
         <img src={hatchImg} alt="hatch" className="w-18" />
         <div className="">
