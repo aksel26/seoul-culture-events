@@ -16,7 +16,7 @@ const useFetch = () => {
     const fetchUsers = async () => {
       const paramsResult = extractAndJoinValues(params);
       setIsLoading(true);
-      const fetchResult = await apiClient.get(`/${KEY}/json/culturalEventInfo/1/10/${paramsResult}`);
+      const fetchResult = await apiClient.get(`/${KEY}/json/culturalEventInfo/1/350/${paramsResult}`);
 
       setIsLoading(false);
 
