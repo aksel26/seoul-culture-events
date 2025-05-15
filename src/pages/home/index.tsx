@@ -6,8 +6,10 @@ import ToTopButton from "@/components/topButton";
 import useConvertAddress from "@/hooks/useConvertAddress";
 import useFetch from "@/hooks/useFetch";
 import useGeolocation from "@/hooks/useGeoLocation";
+import { TList } from "@/lib/types";
 import { ChevronRight, MapPin } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { location, error: locationError, loading: locationLoading } = useGeolocation();
@@ -18,9 +20,12 @@ const Home = () => {
   // Step 3: Fetch data based on address
   const { result, isLoading: fetchLoading } = useFetch();
   // console.log("🚀 ~ Home ~ address:", address)
-  //
-  //
-  // ;
+  const [resultByAddress, setResultByAddress] = useState<TList[]>([]);
+
+  const router = useNavigate();
+  const goDetail = () => {
+    router("/discover");
+  };
 
   useEffect(() => {
     if (location && !locationLoading && !locationError) {
@@ -31,6 +36,12 @@ const Home = () => {
       }));
     }
   }, [location, locationLoading, locationError, setLocation]);
+
+  useEffect(() => {
+    if (address && result) {
+      setResultByAddress(result?.row.filter((item: TList) => item.GUNAME === address));
+    }
+  }, [address, result]);
 
   if (locationLoading) {
     return <div>위치 정보를 가져오는 중...</div>;
@@ -74,14 +85,14 @@ const Home = () => {
                 </div>
               </div>
               {/* <Button variant={"ghost"} size={"xs"}> */}
-              <div className="flex gap-x-1 px-4 text-xs items-center text-gray-500 pr-4">
+              <div onClick={goDetail} className="flex gap-x-1 px-4 text-xs items-center text-gray-500 pr-4 cursor-pointer">
                 <p>전체보기</p>
                 <ChevronRight size={16} />
               </div>
               {/* </Button> */}
               {/* <SearchModal /> */}
             </div>
-            <Events result={result} isLoading={fetchLoading} />
+            <Events result={resultByAddress} isLoading={fetchLoading} />
           </div>
         </section>
 
