@@ -28,7 +28,7 @@ const ToTopButton = () => {
   }, []);
   return (
     <button
-      className={`fixed bottom-32 right-6 z-50 bg-primary-200 text-primary-800 p-2 rounded-lg cursor-pointer transition-all duration-300 ease-in-out  ${
+      className={`fixed bottom-6 right-6 z-50 bg-primary-200 text-primary-800 p-2 rounded-lg cursor-pointer transition-all duration-300 ease-in-out  ${
         showButton ? "opacity-75 visible" : "opacity-0 invisible"
       }`}
       type="button"
