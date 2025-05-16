@@ -1,16 +1,22 @@
 import useListStore from "@/store/useEvent";
 import { Building2, ChevronRight, Globe, HandCoins, MapPin, UserRound } from "lucide-react";
+import { useEffect } from "react";
 
 const Detail = () => {
   const { selectedItem } = useListStore();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
   if (!selectedItem) return null;
+
   const { MAIN_IMG, PLACE, CODENAME, TITLE, GUNAME, DATE, USE_FEE, USE_TRGT, HMPG_ADDR, ORG_NAME } = selectedItem;
-  console.log("🚀 ~ Detail ~ selectedItem:", selectedItem);
-  const goWebsite = () => {
-    window.open(HMPG_ADDR, "_blank");
-  };
+
+  const goWebsite = () => window.open(HMPG_ADDR, "_blank");
+
   return (
-    <section className="p-4 bg-gradient-to-b from-primary-50 to-pink-100 flex flex-col gap-y-2">
+    <section className=" max-w-2xl mx-auto p-4 bg-gradient-to-b from-primary-50 to-pink-100 flex flex-col gap-y-2">
       <img src={MAIN_IMG} alt="mainImg" className="rounded-md" onClick={goWebsite} />
       <div className="bg-white rounded-md px-3 py-5 flex flex-col w-full mx-auto">
         <div className="flex flex-col gap-y-5">
