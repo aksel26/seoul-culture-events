@@ -1,7 +1,8 @@
 import { TList } from "@/lib/types";
 import React from "react";
 import Loader from "../loader";
-import ContentCard from "../mainCard";
+// import ContentCard from "../mainCard";
+import ContentCardV2 from "../mainCardV2";
 
 const Events = ({ result, isLoading }: { result: TList[] | undefined; isLoading: boolean }) => {
   // const { result, isLoading } = useFetch();
@@ -12,7 +13,7 @@ const Events = ({ result, isLoading }: { result: TList[] | undefined; isLoading:
       {result?.map((item: TList, index: number) => (
         <React.Fragment key={index}>
           {/* <div className="p-1"> */}
-          <ContentCard item={item} />
+          <ContentCardV2 item={item} />
           {/* </div> */}
         </React.Fragment>
       ))}
