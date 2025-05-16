@@ -7,6 +7,7 @@ const Detail = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
+      behavior: "smooth",
     });
   }, []);
   if (!selectedItem) return null;
