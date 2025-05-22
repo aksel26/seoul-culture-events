@@ -12,6 +12,8 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate", // 서비스 워커 업데이트 방식 설정
       injectRegister: "auto", // 서비스 워커 등록 코드 자동 삽입
+      includeAssets: ["favicon.ico", "apple-touch-icon.png", "masked-icon.svg"],
+
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"], // 캐시할 파일 패턴 지정
       },
