@@ -7,12 +7,17 @@ import useConvertAddress from "@/hooks/useConvertAddress";
 import useFetch from "@/hooks/useFetch";
 import useGeolocation from "@/hooks/useGeoLocation";
 import { TList } from "@/lib/types";
+import useAllEvents from "@/store/useAllEvents";
 import { ChevronRight, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const { location, error: locationError, loading: locationLoading } = useGeolocation();
+  const {
+    location,
+    error: locationError,
+    loading: locationLoading,
+  } = useGeolocation();
 
   // Step 2: Convert location to address
   const { setLocation, address, error: addressError } = useConvertAddress();
@@ -37,9 +42,13 @@ const Home = () => {
     }
   }, [location, locationLoading, locationError, setLocation]);
 
+  const { setEvents } = useAllEvents();
   useEffect(() => {
     if (address && result) {
-      setResultByAddress(result?.row.filter((item: TList) => item.GUNAME === address));
+      setResultByAddress(
+        result?.row.filter((item: TList) => item.GUNAME === address)
+      );
+      setEvents(result?.row);
     }
   }, [address, result]);
 
@@ -48,7 +57,9 @@ const Home = () => {
   }
 
   if (locationError) {
-    return <div>위치 정보를 가져오는데 오류가 발생했습니다: {locationError}</div>;
+    return (
+      <div>위치 정보를 가져오는데 오류가 발생했습니다: {locationError}</div>
+    );
   }
 
   if (!address) {
@@ -85,7 +96,10 @@ const Home = () => {
                 </div>
               </div>
               {/* <Button variant={"ghost"} size={"xs"}> */}
-              <div onClick={goDetail} className="flex gap-x-1 px-4 text-xs items-center text-gray-500 pr-4 cursor-pointer">
+              <div
+                onClick={goDetail}
+                className="flex gap-x-1 px-4 text-xs items-center text-gray-500 pr-4 cursor-pointer"
+              >
                 <p>전체보기</p>
                 <ChevronRight size={16} />
               </div>
