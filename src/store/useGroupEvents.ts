@@ -6,7 +6,7 @@ import { useMemo } from "react";
  * @param {Array} data - 문화행사 데이터 배열
  * @returns {Object} GUNAME을 키로 하고 해당 구의 행사들을 값으로 하는 객체
  */
-export const useGroupByGuname = (data = []) => {
+export const useGroupByGuname = (data: TList[] = []) => {
   const groupedData = useMemo(() => {
     if (!Array.isArray(data) || data.length === 0) {
       return {};
