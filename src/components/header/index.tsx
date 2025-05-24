@@ -3,7 +3,7 @@ import headerLogo from "../../assets/headerLogo.png";
 
 const Header = () => {
   return (
-    <header className="max-w-2xl mx-auto sticky top-0  bg-white shadow-xs transition-opacity duration-300 z-50 ">
+    <header className="max-w-2xl mx-auto sticky top-0  bg-white opacity-75 shadow-xs transition-opacity duration-300 z-50 ">
       <div className="container mx-auto px-1 relative py-1 flex justify-center">
         <img src={headerLogo} alt="headerLogo" className="h-10" />
 
