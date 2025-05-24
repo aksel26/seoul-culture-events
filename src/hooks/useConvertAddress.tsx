@@ -28,7 +28,6 @@ const useConvertAddress = () => {
           ...config,
         })
         .then((res) => {
-          console.log("🚀 ~ .then ~ res:", res);
           setAddress(res.data.documents[0].address.region_2depth_name);
         })
         .catch((error) => {
