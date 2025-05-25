@@ -25,7 +25,7 @@ const Discover = () => {
   };
 
   return (
-    <section className="p-6 bg-gradient-to-b from-primary-50 to-pink-100">
+    <section className="max-w-2xl mx-auto p-6 bg-gradient-to-b from-primary-50 to-pink-100">
       <div className="flex flex-col gap-8">
         {Object.entries(groupedData).map(([key, value]: [string, TList[]]) => {
           return (
