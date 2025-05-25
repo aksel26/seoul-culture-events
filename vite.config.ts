@@ -22,7 +22,7 @@ export default defineConfig({
         short_name: "서울아트맵", // 짧은 앱 이름
         description:
           "서울의 다양한 예술(Art) 공연을 지도처럼 한눈에 찾아보세요!", // 앱 설명
-        theme_color: "#fedee1", // 테마 색상 (상단 바 색상 등)
+        theme_color: "white", // 테마 색상 (상단 바 색상 등)
         background_color: "#fedee1", // 배경 색상
         display: "standalone", // 앱 표시 방식 (standalone, fullscreen, minimal-ui, browser)
         scope: "/", // PWA 범위 (앱의 시작 URL)
